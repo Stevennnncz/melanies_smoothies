@@ -11,7 +11,7 @@ st.write(
 name_on_order = st.text_input('Name on the smoothie')
 st.write('The name on your smoothie will be : ' ,name_on_order)
 from snowflake.snowpark.functions import col
-cnx = st.connection("snoflake");
+cnx = st.connection("snowflake");
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 ingredients_list = st.multiselect(
